@@ -1,0 +1,54 @@
+<div class="container content">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<div class="card card-outline-secondary">
+				<div class="card-header">
+					<p id="titleJugadores">Lista de Jugadores</p>
+				</div>
+				<div class="card-body">
+					<!--INICIO DEL FORMULARIO-->
+					<form>
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<label for="validationServer01">First name</label>
+								<input type="text" class="form-control is-valid" id="nombre" value="" placeholder="Ingresar nombre..." #nombre required>
+								<div class="valid-feedback">Looks good!</div>
+								<div class="invalid-feedback">El nombre es requerido y obligatorio.</div>
+							</div>
+							<div class="col-md-6 mb-3">
+							    <label for="validationServer02">Last name</label>
+							    <input type="text" class="form-control is-valid" id="apellido" value="" placeholder="Ingresar apellido..." #apellido required>
+							    <div class="valid-feedback">Looks good!</div>
+							    <div class="invalid-feedback">El apellido es requerido y obligatorio.</div>
+							</div>
+							<div class="col-md-6 mb-3">
+							    <label for="validationServer02">Number</label>
+							    <input type="text" class="form-control is-valid" id="numero" value="" placeholder="Ingresar el número..." #numero required>
+							    <div class="valid-feedback">Looks good!</div>
+							    <div class="invalid-feedback">El número de su camiseta es requerido y obligatorio.</div>
+							</div>
+							<div class="col-md-6 mb-3">
+							    <label for="validationServer02">Position</label>
+							    <input type="text" class="form-control is-valid" id="posicion" value="" placeholder="Ingresar la posición..." #posicion required>
+							    <div class="valid-feedback">Looks good!</div>
+							    <div class="invalid-feedback">La posición en la cancha es requerido y obligatorio.</div>
+							</div>
+						</div>					  
+
+					  <button type="submit" class="btn btn-primary" (click)="save(nombre.value, apellido.value, numero.value, posicion.value)">Submit Table</button>
+					</form>
+					<!--FIN DEL FORMULARIO-->
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--FIN DEL ROW-->
+
+	<hr class="mb-5">
+    <div class="row row-flex">
+        <app-jugador-seleccion *ngFor="let jug of jugadores" [jugador]="jug"></app-jugador-seleccion>
+    </div>
+
+
+</div>
